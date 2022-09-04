@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Coin
+  - Hp
+  - energy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 1917702897
+    locked: 0
+  - name: Colund
+    uniqueID: 493435849
+    locked: 0
+  - name: Wall_21
+    uniqueID: 2064701323
+    locked: 0
+  - name: SkyAndMountain
+    uniqueID: 1844041755
+    locked: 0
+  - name: Rock
+    uniqueID: 3919197001
+    locked: 0
+  - name: Wall
+    uniqueID: 3001112833
+    locked: 0
+  - name: Flage
+    uniqueID: 2835747541
+    locked: 0
+  - name: Home
+    uniqueID: 44154131
+    locked: 0
+  - name: Ground
+    uniqueID: 1314914331
+    locked: 0
+  - name: Coin
+    uniqueID: 1030391175
+    locked: 0
+  - name: Tower_2
+    uniqueID: 1850800595
+    locked: 0
+  - name: Night
+    uniqueID: 2644089115
+    locked: 0
+  - name: Tower_1
+    uniqueID: 2096934987
+    locked: 0
+  - name: Enemy
+    uniqueID: 2857383945
+    locked: 0
+  - name: spite
+    uniqueID: 4220177643
+    locked: 0
