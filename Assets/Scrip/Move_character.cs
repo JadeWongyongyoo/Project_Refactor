@@ -55,10 +55,10 @@ public class Move_character : MonoBehaviour
         }
         else if (heart_4.gameObject.activeSelf == false)
         {
-            heart_4.gameObject.SetActive(true);
-                        
+            heart_4.gameObject.SetActive(true);          
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,23 +67,15 @@ public class Move_character : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         AudioClip = GetComponent<AudioSource>();
     }
-
-
     // Update is called once per frame
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(2.0f);
-        hitbox.gameObject.SetActive(false);
-    }
     void Update()
     {   
 
         if (Input.GetButtonDown("Fire1"))
         {
             hitbox.gameObject.SetActive(true);
-            anim.SetTrigger("Attack");
+            AnimationSetTrigger("Attack");
             StartCoroutine(Delay());
-            
         } 
         
         if (Input.GetButtonDown("Jump"))
@@ -91,24 +83,26 @@ public class Move_character : MonoBehaviour
             if ((grounded == true) && (gamestarted == true))
             Jump = true;
             grounded = false;
-            anim.SetTrigger("Jump");
+            AnimationSetTrigger("Jump");
             AudioClip.Play();
         }
         else
         {
             gamestarted = true;
-            anim.SetTrigger("Start");
+            AnimationSetTrigger("Start");
         }
-        anim.SetBool("Grounded", grounded);
+        AnimationSetBool("Grounded", grounded);
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         grounded = true;
     }
+
     private void FixedUpdate()
     {
         move = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", Mathf.Abs(move));
+        AnimationSetFloat("Speed", Mathf.Abs(move));
 
         rigidbody.velocity = new Vector2(speed * move, rigidbody.velocity.y);
 
@@ -129,11 +123,33 @@ public class Move_character : MonoBehaviour
         }
 
     }
+
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2.0f);
+        hitbox.gameObject.SetActive(false);
+    }
+
+    void AnimationSetTrigger(string parameterName)
+    {
+        anim.SetTrigger(parameterName);
+    }
+
+    void AnimationSetFloat(string parameterName, float number)
+    {
+        anim.SetFloat(parameterName, number);
+    }
+
+    void AnimationSetBool(string parameterName, bool status)
+    {
+        anim.SetBool(parameterName, status);
     }
 }
